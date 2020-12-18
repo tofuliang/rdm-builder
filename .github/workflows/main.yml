@@ -137,7 +137,7 @@ jobs:
         python ./rdm/build/utils/set_version.py $ver > ./rdm/src/version.h
         cd rdm/src
         qmake rdm.pro CONFIG+=sdk_no_version_check CONFIG-=debug
-        gsed -i "s/-dev//" rdm.pro
+        gsed -i "s/\-dev//" rdm.pro
         gsed -i "s/\.dev//" qml/WelcomeTab.qml
         make -s -j8
     - name: copy translations
